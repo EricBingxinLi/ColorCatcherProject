@@ -119,7 +119,7 @@ void setup() {
   Sound1 = minim.loadFile("FAILURE.wav");
   Sound2 = minim.loadFile("SUCCESS.wav");
   
-  Song.play();
+  Song.loop();
   
  //Input = minim.getLineIn();
   
@@ -249,5 +249,11 @@ void cleanupMemory() {
     for (int i = 0; i < gif.length; i++) gif[i] = null;
     gif = null;
  }
+}
+
+void stop() {
+  Song.close();
+  minim.stop();
+  super.stop();
 }
  
